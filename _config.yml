@@ -1,0 +1,16 @@
+title: Nakshatra
+email: nakshatra@nitt.edu
+description: >- 
+  The Official Astronomy Club of NIT Trichy
+twitter_username: nakshatra_nitt
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+collections_dir: content
+
+collections:
+  pages:
+  events:
+    output: true

@@ -1,0 +1,18 @@
+<div id="medium-widget"></div>
+<script id="mjs" defer src="https://medium-widget.pixelpoint.io/widget.js"></script>
+<script>
+    var mediumJsScript = document.querySelector('#mjs');
+    mediumJsScript.addEventListener('load', function() {
+        MediumWidget.Init({
+            renderTo: '#medium-widget', 
+            params: { 
+                "resource": "https://medium.com/nakshatra", 
+                "postsPerLine": 1, 
+                "limit": (window.matchMedia('(max-width: 1240px)').matches) ? 3 : 5, 
+                "picture": (window.matchMedia('(max-width: 768px)').matches) ? "big" : "small", 
+                "fields": ["description", "author", "claps", "publishAt"], 
+                "ratio": "landscape" 
+            }
+        });
+    });
+</script>

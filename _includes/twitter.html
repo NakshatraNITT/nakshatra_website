@@ -1,0 +1,19 @@
+<a class="twitter-timeline" data-chrome="transparent noborder nofooter noheader" data-width="100%"
+    data-dnt="true" data-theme="dark" data-tweet-limit="3" href="https://twitter.com/NakshatraNITT?ref_src=twsrc%5Etfw">Tweets by
+    NakshatraNITT</a>
+<script id="twitter-js" defer src="https://platform.twitter.com/widgets.js" charset="utf-8">
+</script>
+<script>
+    document.getElementById('twitter-js').addEventListener('load', function () {
+        twttr.events.bind(
+            'loaded',
+            function (event) {
+                event.widgets.forEach(function (widget) {
+                    console.log("Created widget", widget.id);
+                });
+
+                $("iframe#twitter-widget-0").css('pointer-events', 'none');
+            }
+        );
+    }, false);
+</script>
