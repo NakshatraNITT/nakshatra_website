@@ -1,7 +1,6 @@
 {% assign events = site.events | reverse %}
 {% for event in events %}
-    <div class="timeline-item" date-is='{{ event.date | date: '%e %b %Y' }}'>
-        <h3>{{ event.title }}</h3>
+    <div class="timeline-item" date-is='{{ event.title }}'>
         <p>
             {{ event.content | markdownify }}
         </p>

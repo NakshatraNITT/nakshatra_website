@@ -1,47 +1,17 @@
-<style>
-    .image-gallery {
-        overflow: auto;
-        margin-left: -1% !important;
-    }
+{% for file in site.static_files %}
+{% if file.path contains "assets/images/gallery/" %}
+{% assign extensions = ".jpg .jpeg .png .gif .jfif" | split: " " %}
+{% if extensions contains file.extname %}
 
-    .image-gallery a {
-        float: left;
-        display: block;
-        margin: 0 0 1% 1%;
-        width: 19%;
-        text-align: center;
-        text-decoration: none !important;
-    }
-
-    .image-gallery a span {
-        display: block;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 3px 0;
-    }
-
-    .image-gallery a img {
-        width: 100%;
-        display: block;
-    }
-</style>
-
-<div class="image-gallery">
-    {% for file in site.static_files %}
-    {% if file.path contains "assets/images/" %}
-    {% assign extensions = ".jpg .jpeg .png .gif" | split: " " %}
-    {% if extensions contains file.extname %}
-
-    {% assign filenameparts = file.path | split: "/" %}
-    {% assign filename = filenameparts | last | replace: file.extname,"" %}
-
+{% assign filenameparts = file.path | split: "/" %}
+{% assign filename = filenameparts | last | replace: file.extname,"" %}
+<div class="slide">
     <a href="{{ site.url }}{{ site.baseurl }}{{ file.path }}" title="{{ filename }}">
-        <img loading="lazy" src="https://images.weserv.nl/?url={{ site.url }}{{ site.baseurl }}{{ file.path }}&w=300&h=300&output=jpg&q=50&t=square"
-            alt="{{ filename }}" />
-        <span>{{ filename }}</span>
+        <img loading="lazy"
+            data-src="https://images.weserv.nl/?url={{ site.url }}{{ site.baseurl }}{{ file.path }}&w=800&output=jpg&q=50"
+            alt="{{ filename }}" style="max-width: 100%; max-height: 100%;" />
     </a>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
 </div>
+{% endif %}
+{% endif %}
+{% endfor %}

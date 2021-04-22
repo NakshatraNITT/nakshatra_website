@@ -38,20 +38,23 @@
                 <li data-menuanchor="about">
                     <a href="#about" class="nav-link">About</a>
                 </li>
-                <li data-menuanchor="gallery">
-                    <a href="#gallery" class="nav-link">Gallery</a>
-                </li>
                 <li data-menuanchor="events">
                     <a href="#events" class="nav-link">Events</a>
                 </li>
                 <li data-menuanchor="blog">
                     <a href="#blog" class="nav-link">Blog</a>
                 </li>
+                <li data-menuanchor="gallery">
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
                 <li data-menuanchor="twitter">
                     <a href="#twitter" class="nav-link">Twitter</a>
                 </li>
+                <li data-menuanchor="team">
+                    <a href="#team" class="nav-link">Team</a>
+                </li>
                 <li data-menuanchor="contact">
-                    <a href="#contact" class="nav-link">Contacts</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -90,12 +93,22 @@
                     d="M25.312 6.375c-0.688 1-1.547 1.891-2.531 2.609 0.016 0.219 0.016 0.438 0.016 0.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-0.828-7.75-2.266 0.406 0.047 0.797 0.063 1.219 0.063 2.359 0 4.531-0.797 6.266-2.156-2.219-0.047-4.078-1.5-4.719-3.5 0.313 0.047 0.625 0.078 0.953 0.078 0.453 0 0.906-0.063 1.328-0.172-2.312-0.469-4.047-2.5-4.047-4.953v-0.063c0.672 0.375 1.453 0.609 2.281 0.641-1.359-0.906-2.25-2.453-2.25-4.203 0-0.938 0.25-1.797 0.688-2.547 2.484 3.062 6.219 5.063 10.406 5.281-0.078-0.375-0.125-0.766-0.125-1.156 0-2.781 2.25-5.047 5.047-5.047 1.453 0 2.766 0.609 3.687 1.594 1.141-0.219 2.234-0.641 3.203-1.219-0.375 1.172-1.172 2.156-2.219 2.781 1.016-0.109 2-0.391 2.906-0.781z">
                 </path>
             </symbol>
+            <symbol id="icon-phone" viewBox="0 0 22 28">
+                <path
+                    d="M22 19.375c0 0.562-0.25 1.656-0.484 2.172-0.328 0.766-1.203 1.266-1.906 1.656-0.922 0.5-1.859 0.797-2.906 0.797-1.453 0-2.766-0.594-4.094-1.078-0.953-0.344-1.875-0.766-2.734-1.297-2.656-1.641-5.859-4.844-7.5-7.5-0.531-0.859-0.953-1.781-1.297-2.734-0.484-1.328-1.078-2.641-1.078-4.094 0-1.047 0.297-1.984 0.797-2.906 0.391-0.703 0.891-1.578 1.656-1.906 0.516-0.234 1.609-0.484 2.172-0.484 0.109 0 0.219 0 0.328 0.047 0.328 0.109 0.672 0.875 0.828 1.188 0.5 0.891 0.984 1.797 1.5 2.672 0.25 0.406 0.719 0.906 0.719 1.391 0 0.953-2.828 2.344-2.828 3.187 0 0.422 0.391 0.969 0.609 1.344 1.578 2.844 3.547 4.813 6.391 6.391 0.375 0.219 0.922 0.609 1.344 0.609 0.844 0 2.234-2.828 3.187-2.828 0.484 0 0.984 0.469 1.391 0.719 0.875 0.516 1.781 1 2.672 1.5 0.313 0.156 1.078 0.5 1.188 0.828 0.047 0.109 0.047 0.219 0.047 0.328z">
+                </path>
+            </symbol>
+            <symbol id="icon-envelope" viewBox="0 0 28 28">
+                <path
+                    d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z">
+                </path>
+            </symbol>
         </defs>
     </svg>
 
     <div id="scene">
         <div data-depth="0.2" class="layer">
-            <div id="particles-js"></div>
+            <div id="tsparticles"></div>
         </div>
         <div data-depth="0.1" class="layer bglayer-1"></div>
         <div data-depth="0.05" class="layer bglayer-2"></div>
@@ -106,13 +119,14 @@
                         <img id="logo" src="assets/images/logo.svg"
                             style="max-height: 40vh; width: 80%; align-self: center;">
                         <div id="title">NAKSHATRA</div>
-                        <div id="tagline">THE ASTRONOMY CLUB OF NIT TRICHY</div>
+                        <div id="tagline">THE ASTRONOMY AND SCIENCE CLUB OF NIT TRICHY</div>
                         <div id="subtitles">
                             <div class="subtitle"><a href="#about">About</a></div>
-                            <div class="subtitle"><a href="#gallery">Gallery</a></div>
                             <div class="subtitle"><a href="#events">Events</a></div>
                             <div class="subtitle"><a href="#blog">Blog</a></div>
+                            <div class="subtitle"><a href="#gallery">Gallery</a></div>
                             <div class="subtitle"><a href="#twitter">Twitter</a></div>
+                            <div class="subtitle"><a href="#team">Team</a></div>
                             <div class="subtitle"><a href="#contact">Contact</a></div>
                         </div>
                         <div id="social">
@@ -159,14 +173,6 @@
                 </div>
                 <div class="section" style="color: aliceblue;">
                     <div class="screen">
-                        <h1 class="screen-title">Gallery</h1>
-                        <div class="screen-content">
-                            {% include gallery.html %}
-                        </div>
-                    </div>
-                </div>
-                <div class="section" style="color: aliceblue;">
-                    <div class="screen">
                         <h1 class="screen-title event-screen-title">Events</h1>
                         <div class="screen-content event-screen-content">
                             {% include events.html %}
@@ -183,9 +189,25 @@
                 </div>
                 <div class="section" style="color: aliceblue;">
                     <div class="screen">
+                        <h1 class="screen-title">Gallery</h1>
+                        <div class="screen-content">
+                            {% include gallery.html %}
+                        </div>
+                    </div>
+                </div>
+                <div class="section" style="color: aliceblue;">
+                    <div class="screen">
                         <h1 class="screen-title">Twitter</h1>
                         <div class="screen-content twitter-screen-content">
                             {% include twitter.html %}
+                        </div>
+                    </div>
+                </div>
+                <div class="section" style="color: aliceblue;">
+                    <div class="screen">
+                        <h1 class="screen-title">Team</h1>
+                        <div class="screen-content">
+                            {% include team.html %}
                         </div>
                     </div>
                 </div>
@@ -203,12 +225,50 @@
 
     <script src="assets/js/main.js"></script>
 
-    <script id="pjs" defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
+    <script id="pjs" defer src="https://cdn.jsdelivr.net/npm/tsparticles@1.20.0/dist/tsparticles.min.js"
+        integrity="sha256-AovR6L8tYaLpZPdFGvYk97n5PaB3sbUMXIqgR1F6l5k=" crossorigin="anonymous"></script>
     <script>
         var particleJsScript = document.querySelector('#pjs');
         particleJsScript.addEventListener('load', function () {
-            particlesJS.load('particles-js', 'assets/config/particlesjs-config.json');
+            tsParticles.load("tsparticles", {
+                autoPlay: true,
+                detectRetina: true,
+                fpsLimit: 20,
+                particles: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                    move: {
+                        direction: "bottom-right",
+                        distance: 0,
+                        enable: true,
+                        outModes: {
+                            default: "out",
+                        },
+                        size: false,
+                        speed: 0.6,
+                        straight: true
+                    },
+                    number: {
+                        density: { enable: true, area: 100 },
+                        limit: 0,
+                        value: 5
+                    },
+                    opacity: {
+                        random: { enable: true, minimumValue: 0.7 },
+                        value: 1,
+                    },
+                    shape: { options: {}, type: "circle", polygon: { nb_sides: 1 } },
+                    size: {
+                        random: { enable: true, minimumValue: 1 },
+                        value: 1,
+                    },
+                    twinkle: {
+                        lines: { enable: false, frequency: 0.05, opacity: 1 },
+                        particles: { enable: true, frequency: 0.005, opacity: 0.3 }
+                    }
+                },
+            });
         });
     </script>
 

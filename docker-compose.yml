@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  website:
+    container_name: nakshatra_website
+    image: jekyll/jekyll:minimal
+    ports:
+      - '3066:4000'
+    volumes:
+      - '.:/srv/jekyll'
+      - './vendor/bundle:/usr/local/bundle'
+    command: jekyll serve --watch --verbose

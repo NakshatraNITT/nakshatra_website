@@ -87,13 +87,19 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
     font-size: min(calc(4 * var(--vh, 1vh)), 4vw);
     margin-bottom: 20px;
+}
+
+.section {
+    transform: translateZ(0);
 }
 
 .section > * {
     width: inherit !important;
     height: inherit !important;
+    transform: translateZ(0);
 }
 
 .subtitle {
@@ -132,7 +138,7 @@ nav.open {
 }
 
 .nav-list li.active {
-    border: 1px solid white;
+    border: 2px solid rgba(255, 255, 255, 30%);
     border-radius: 10px;
 }
 
@@ -228,10 +234,11 @@ li {
 
 .screen-title {
     width: 20%;
-    border-right: 1px solid white;
+    border-right:2px solid rgba(255, 255, 255, 45%);
 }
 
 .screen-content {
+    position: relative;
     width: 60%;
     margin: 3rem;
     height: 70%;
@@ -252,6 +259,26 @@ li {
 
 .twitter-screen-content {
     width: 40%;
+}
+
+.slide {
+    text-align: center;
+}
+
+.slide > .fp-tableCell {
+    height: 100% !important;
+}
+
+.fp-controlArrow {
+    margin-top: -10px !important;
+}
+
+.fp-controlArrow.fp-prev {
+    border-width: 10px 10px 10px 0 !important;
+}
+
+.fp-controlArrow.fp-next {
+    border-width: 10px 0 10px 10px !important;
 }
 
 @media (max-width: 1240px) {
@@ -295,11 +322,11 @@ li {
     content: attr(date-is);
     position: absolute;
     font-weight: bold;
-    top: 1em;
+    top: 0.25em;
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: .785rem;
+    font-size: 1.2rem;
 }
 
 .timeline-item::after {
@@ -475,9 +502,9 @@ li {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
 }

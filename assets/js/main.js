@@ -1,7 +1,17 @@
 $(document).ready(function () {
     $('#fullpage').fullpage({
-        anchors: ['home', 'about', 'gallery', 'events', 'blog', 'twitter', 'contact'],
+        anchors: ['home', 'about', 'events', 'blog', 'gallery', 'twitter', 'team', 'contact'],
         recordHistory: false,
+        loopBottom: false,
+        easingcss3: 'ease-in-out',
+        scrollingSpeed: 600,
+        afterRender: function () {
+            setInterval(function () {
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        },
+        css3: true,
+        slidesNavigation: false,
         menu: '#menu'
     });
 
@@ -9,6 +19,7 @@ $(document).ready(function () {
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
     });
+
     $('nav .nav-link').on('click', function () {
         $('.menu-toggler').removeClass('open');
         $('nav').removeClass('open');
@@ -96,10 +107,12 @@ function setGallery(el) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    //create lightbox div in the footer
     var newdiv = document.createElement("div");
     newdiv.setAttribute('id',"lightbox");
     document.body.appendChild(newdiv);
 
+    //add classes to links to be able to initiate lightboxes
     var elements = document.querySelectorAll('a');
     elements.forEach(element => {
         var url = element.getAttribute('href');
@@ -115,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    //remove the clicked lightbox
     document.getElementById('lightbox').addEventListener("click", function(event) {
         if(event.target.id != 'next' && event.target.id != 'prev'){
             this.innerHTML = '';
@@ -122,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    //add the image lightbox on click
     var elements = document.querySelectorAll('a.lightbox-image');
     elements.forEach(element => {
         element.addEventListener("click", function(event) {
